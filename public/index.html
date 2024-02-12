@@ -1,40 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Web3 App</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linked-out</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="app">
-    <div id="content">
-      <h1>Добро пожаловать в Web3 App</h1>
-      <div id="authForms">
-        <div id="registrationForm" style="display: none;">
-          <h2>Регистрация</h2>
-          <label for="regUsername">Имя пользователя:</label>
-          <input type="text" id="regUsername" required><br>
-          <label for="regPassword">Пароль:</label>
-          <input type="password" id="regPassword" required><br>
-          <label for="walletAddress">Адрес кошелька (опционально):</label>
-          <input type="text" id="walletAddress"><br>
-          <button onclick="register()">Зарегистрироваться</button>
-          <p>Уже есть аккаунт? <a href="#" onclick="toggleAuthForms('login')">Войти</a></p>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="/" class="nav-logo">Linked-out</a>
+                <a href="/profile" class="nav-link">Profile</a>
+            </nav>
         </div>
-        <div id="loginForm">
-          <h2>Авторизация</h2>
-          <label for="loginUsername">Имя пользователя:</label>
-          <input type="text" id="loginUsername" required><br>
-          <label for="loginPassword">Пароль:</label>
-          <input type="password" id="loginPassword" required><br>
-          <button onclick="login()">Войти</button>
-          <p>Нет аккаунта? <a href="#" onclick="toggleAuthForms('registration')">Зарегистрируйтесь</a></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <script src="web3.js"></script>
-  <script src="app.js"></script>
+    </header>
+
+    <section class="hero">
+        <h2>Welcome to Linked-out</h2>
+        <p>Connect with professionals around the world.</p>
+    </section>
+
 </body>
 </html>
