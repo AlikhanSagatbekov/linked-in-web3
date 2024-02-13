@@ -8,26 +8,30 @@
 </head>
 <body>
     <header>
-        <div class="logo">
-            <h1><a href="/">Linked-out</a></h1>
+        <div class="container">
+            <nav>
+                <a href="/" class="nav-logo">Linked-out</a>
+                <a href="/profile" class="nav-link">Profile</a>
+            </nav>
         </div>
-        <nav>
-            <ul>
-                <li><a href="/profile">Profile</a></li>
-            </ul>
-        </nav>
     </header>
 
-    <section class="login">
-        <h2>Login</h2>
-        <p>Don't have an account? <a href="/register">Register</a></p>
-        <form action="/login" method="post">
-            <label for="username">Username:</label><br>
-            <input type="text" id="username" name="username" required><br>
-            <label for="password">Password:</label><br>
-            <input type="password" id="password" name="password" required><br><br>
-            <input type="submit" value="Login">
-        </form>
+    <section class="form">
+        <div class="container">
+            <div class="title">Login</div>
+            <p>Don't have an account? <a href="/register">Register</a></p>
+            <form action="/login" method="post">
+                <div class="wrapper">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="wrapper">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <input type="submit" value="Login">
+            </form>
+        </div>
     </section>
 
 </body>

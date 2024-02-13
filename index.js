@@ -8,6 +8,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 app.use(express.static('public'));
 app.use(session({
     secret: 'secret-key',
@@ -104,6 +105,34 @@ app.get('/profileData', (req, res) => {
       return;
   }
   res.json(userData);
+});
+
+app.post('/updateWalletAddress', (req, res) => {
+    console.log(req.body);
+    const { username, address } = req.body;
+
+    // Find the user in the database
+    const user = users.find(u => u.username === username);
+
+    if (!user) {
+        console.log(username);
+        res.status(404).send('User not found');
+        return;
+    }
+
+    // Update the wallet address for the user
+    user.walletAddress = address;
+
+    // Update users.json file
+    fs.writeFile(__dirname + '/data/users.json', JSON.stringify(users), (err) => {
+        if (err) {
+            console.error(err);
+            res.status(500).send('Error saving user data');
+            return;
+        }
+        console.log(`Wallet address updated for ${username}: ${address}`);
+        res.sendStatus(200);
+    });
 });
 
 // Route for handling logout
