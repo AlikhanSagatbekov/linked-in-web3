@@ -47,7 +47,7 @@ app.post('/register', (req, res) => {
   // Hash password
   const hashedPassword = bcrypt.hashSync(password, 10);
   // Save new user to users array
-  users.push({ username, fullName, email, password: hashedPassword, friends: [] });
+  users.push({ username, fullName, email, password: hashedPassword, friends: [], walletAddress: "" });
   // Update users.json file
   fs.writeFile(__dirname + '/data/users.json', JSON.stringify(users), (err) => {
       if (err) {
